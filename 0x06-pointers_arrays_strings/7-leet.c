@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * leet - encodes a string into 1337
  * @s: input string
@@ -19,7 +18,7 @@ char *leet(char *s)
 		{
 			if (*(s + n) == lower_case_letters[i] || *(s + n) == upper_case_letters[i])
 			{
-				*s(s + n) = numbers[i];
+				*(s + n) = numbers[i];
 				break;
 			}
 		}
