@@ -1,41 +1,54 @@
-#include <stdio.h>
+#include <stdlib.h>
 #include <time.h>
-#include <std;ib.h>
+#include <stdio.h>
 
 /* betty style doc for function main goes there */
 /**
- * main - prints all possible combs of 3 different digits,
- *        in ascending order, separated by a comma followed by a space
+ * main - Prints all possible combinations of three different digits,
+ *        in ascending order, separated by a comma followed by a space.
  *
- * Reurn: always 0
+ * Return: Always 0.
  */
 int main(void)
 {
-	int c = 0;
-	int f_d;
-	int m_d;
-	int l_d;
+	int digit1;
+	int digit2;
+	int digit3;
 
-	while (c <= 999)
+	digit1 = 48;
+	digit2 = 49;
+	digit3 = 50;
+	while  ((digit1 < 56) && (digit2 < 57) && (digit3 < 58))
 	{
-		f_d = (c / 100 + '0');
-		m_d = (c / 10 % 10 + '0');
-		l_d = (c % 10 + '0');
-
-		if ((f_d < m_d) && (m_d < l_d))
+		putchar(digit1);
+		putchar(digit2);
+		putchar(digit3);
+		if ((digit1 == 55) && (digit2 == 56) && (digit3 == 57))
 		{
-			putchar(f_d);
-			putchar(m_d);
-			putchar(l_d);
-
-			if (c != 789)
+			putchar('\n');
+			digit1++;
+			digit2++;
+			digit3++;
+		}
+		else
+		{
+			putchar(44);
+			putchar(32);
+			if (digit3 < 57)
 			{
-				putcha(',');
-				putchar(' ');
+				digit3++;
+			}
+			else if ((digit2 < 56) && (digit3 == 57))
+			{
+				digit3 = 1 + ++digit2;
+			}
+			else
+			{
+				digit2 = 1 + ++digit1;
+				digit3 = 1 + digit2;
 			}
 		}
-		c++
 	}
-	putchar('\n');
 	return (0);
 }
+
